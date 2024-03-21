@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... existing head content ... -->
+    <title>ChatBot</title>
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+        const param1 = document.getElementById('param1').value;
+        const url = `http://localhost:8000/predict?param1=${encodeURIComponent(param1)}`;
+        window.location.href = url;
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <form onsubmit="submitForm(event)">
+        <label for="param1">Query:</label><br>
+        <input type="text" id="param1" name="param1"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <!-- ... existing body content ... -->
+  </body>
+</html>
